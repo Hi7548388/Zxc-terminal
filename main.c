@@ -31,7 +31,7 @@ on_about_clicked(GtkButton *button, gpointer user_data)
                           "version", "1.0",
                           "comments", "A lightweight GTK + VTE terminal emulator.",
                           "authors", authors, 
-                          "website", "https://example.com",
+                          "website", "https://github.com/Hi7548388/Zxc-terminal",
                           NULL);
 }
 
