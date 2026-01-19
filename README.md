@@ -12,4 +12,5 @@
  *   - Theme loader (fg/bg/palette) from ~/.config/zxc-terminal/themes.conf
  *   - Theme combo box to switch themes
  *   - Dark mode toggle
- *   - About d
+ *   - About dialog
+ */
