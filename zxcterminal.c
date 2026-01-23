@@ -1,7 +1,7 @@
 // ps_term.c
 // Minimal GTK+VTE "PowerShell-style" terminal for Linux
 
-#include <gtk/gtk.h>
+#include <gtk-3.0/gtk/gtk.h>
 #include <vte/vte.h>
 
 static void
