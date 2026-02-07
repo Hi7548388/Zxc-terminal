@@ -33,8 +33,8 @@ main(int argc, char **argv)
 
     // PowerShell 7-like colors
     GdkRGBA bg, fg;
-    gdk_rgba_parse(&bg, "#012456");   // PS7-ish dark blue
-    gdk_rgba_parse(&fg, "#f2f2f2");   // light foreground
+    gdk_rgba_parse(&bg, "#012456");
+    gdk_rgba_parse(&fg, "#f2f2f2");
     vte_terminal_set_colors(term, &fg, &bg, NULL, 0);
 
     // Optional palette
@@ -68,23 +68,9 @@ main(int argc, char **argv)
     vte_terminal_set_cursor_blink_mode(term, VTE_CURSOR_BLINK_ON);
     vte_terminal_set_scrollback_lines(term, 10000);
 
-    // PowerShell-like prompt (single, valid C string)
+    // SAFE, ESCAPE-FREE PROMPT
     const char *cmd =
-        "export PS1='\
-
-\[\\e[38;5;45m\\]
-
-PS "
-        "\
-
-\[\\e[38;5;250m\\]
-
-\\w"
-        "\
-
-\[\\e[0m\\]
-
- > '; exec bash -i";
+        "export PS1='PS $(pwd) > '; exec bash -i";
 
     char *argv_shell[] = {
         "/bin/bash",
